@@ -1,0 +1,19 @@
+uuid: 60438b61-1aca-40eb-aece-4ee58c8c5392
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_editor_name
+    - node.type.editor
+id: node.editor.field_editor_name
+field_name: field_editor_name
+entity_type: node
+bundle: editor
+label: Name
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,20 @@
+uuid: 88b524e1-db88-492e-96e5-c9ab2a5b0b88
+langcode: en
+status: true
+dependencies:
+  module:
+    - datetime
+    - node
+id: node.field_editor_joining_date
+field_name: field_editor_joining_date
+entity_type: node
+type: datetime
+settings:
+  datetime_type: date
+module: datetime
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

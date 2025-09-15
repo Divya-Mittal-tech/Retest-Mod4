@@ -1,0 +1,13 @@
+uuid: 0309812a-da92-43b0-9164-3574913ccd65
+langcode: en
+status: true
+dependencies: {  }
+id: news_anchor
+label: Editor
+display_label: ''
+multiple: false
+registration: false
+roles:
+  content_editor: content_editor
+allow_revisions: false
+new_revision: false

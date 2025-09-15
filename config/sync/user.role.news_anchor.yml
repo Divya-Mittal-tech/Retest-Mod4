@@ -1,0 +1,30 @@
+uuid: cf2d6b23-f375-4080-abc3-7bb426d695e4
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.news
+    - node.type.news_anchor
+  module:
+    - node
+id: news_anchor
+label: 'News Anchor'
+weight: 4
+is_admin: null
+permissions:
+  - 'create news content'
+  - 'create news_anchor content'
+  - 'delete any news content'
+  - 'delete any news_anchor content'
+  - 'delete news revisions'
+  - 'delete news_anchor revisions'
+  - 'delete own news content'
+  - 'delete own news_anchor content'
+  - 'edit any news content'
+  - 'edit any news_anchor content'
+  - 'edit own news content'
+  - 'edit own news_anchor content'
+  - 'revert news revisions'
+  - 'revert news_anchor revisions'
+  - 'view news revisions'
+  - 'view news_anchor revisions'

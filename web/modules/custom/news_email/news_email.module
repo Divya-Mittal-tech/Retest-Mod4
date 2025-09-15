@@ -1,0 +1,103 @@
+<?php
+
+use Drupal\node\Entity\Node;
+use Drupal\user\Entity\User;
+use Drupal\Core\Mail\MailManagerInterface;
+
+/**
+ * Implements hook_entity_insert().
+ */
+function news_email_entity_insert(\Drupal\Core\Entity\EntityInterface $entity) {
+  \Drupal::logger('news_email')->notice('news_email_entity_insert called for entity ID: @entity_id', ['@entity_id' => $entity->id()]);
+  
+  if ($entity->getEntityTypeId() === 'node' && $entity->bundle() === 'news') {
+    news_email_notify_editor($entity);
+  }
+}
+
+/**
+ * Implements hook_entity_update().
+ */
+function news_email_entity_update(\Drupal\Core\Entity\EntityInterface $entity) {
+  \Drupal::logger('news_email')->notice('news_email_entity_update called for entity ID: @entity_id', ['@entity_id' => $entity->id()]);
+  
+  if ($entity->getEntityTypeId() === 'node' && $entity->bundle() === 'news') {
+    news_email_notify_editor($entity);
+  }
+}
+
+/**
+ * Notify the editor in charge when a news item is created or updated.
+ */
+function news_email_notify_editor(Node $news_node) {
+  \Drupal::logger('news_email')->notice('news_email_notify_editor called for news node: @news_title', ['@news_title' => $news_node->getTitle()]);
+
+  // Check if field_created_by is set and not empty.
+  if (!$news_node->hasField('field_created_by') || $news_node->get('field_created_by')->isEmpty()) {
+    \Drupal::logger('news_email')->warning('No field_created_by set for news node: @news_title', ['@news_title' => $news_node->getTitle()]);
+    return;
+  }
+
+  // Load the referenced News Anchor node.
+  $anchor_node = $news_node->get('field_created_by')->entity;
+
+  if (!$anchor_node || !$anchor_node->hasField('field_editor_in_charge') || $anchor_node->get('field_editor_in_charge')->isEmpty()) {
+    \Drupal::logger('news_email')->warning('No editor in charge set for anchor node: @anchor_title', ['@anchor_title' => $anchor_node->label()]);
+    return;
+  }
+
+  // Load the Editor in Charge user account.
+  $editor_user = $anchor_node->get('field_editor_in_charge')->entity;
+
+  if (!$editor_user instanceof User) {
+    \Drupal::logger('news_email')->warning('Editor in charge is not a valid user for anchor node: @anchor_title', ['@anchor_title' => $anchor_node->label()]);
+    return;
+  }
+
+  // Prepare email parameters.
+  $to = $editor_user->getEmail();
+  $subject = 'News Update Notification';
+  $body = 'A News item titled "' . $news_node->getTitle() . '" has been created or updated.';
+
+  $params = [
+    'subject' => $subject,
+    'message' => $body,
+  ];
+
+  $langcode = $editor_user->getPreferredLangcode();
+  $send = true;
+  $module = 'news_email';
+  $key = 'news_update_notify';
+
+  $mailManager = \Drupal::service('plugin.manager.mail');
+  $result = $mailManager->mail($module, $key, $to, $langcode, $params, NULL, $send);
+
+  // Log if email was sent or not
+  if ($result['result'] === true) {
+    \Drupal::logger('news_email')->notice('Email successfully sent to %email.', ['%email' => $to]);
+  } else {
+    \Drupal::logger('news_email')->error('Failed to send email to %email.', ['%email' => $to]);
+
+    // Fallback: Send email to the backup address if failed
+    $backup_email = 'sakhranigarvita@gmail.com';
+    $result_fallback = $mailManager->mail($module, $key, $backup_email, $langcode, $params, NULL, $send);
+
+    if ($result_fallback['result'] === true) {
+      \Drupal::logger('news_email')->notice('Email successfully sent to backup address: %email.', ['%email' => $backup_email]);
+    } else {
+      \Drupal::logger('news_email')->error('Failed to send email to backup address %email.', ['%email' => $backup_email]);
+    }
+  }
+}
+
+/**
+ * Implements hook_mail().
+ */
+function news_email_mail($key, &$message, $params) {
+  switch ($key) {
+    case 'news_update_notify':
+      $message['subject'] = $params['subject'];
+      $message['body'][] = $params['message'];
+      break;
+  }
+}

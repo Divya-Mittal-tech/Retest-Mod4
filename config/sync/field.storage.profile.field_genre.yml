@@ -1,0 +1,20 @@
+uuid: bf0af1c2-966e-4f4d-836f-f5b4fd4caeed
+langcode: en
+status: true
+dependencies:
+  module:
+    - profile
+    - taxonomy
+id: profile.field_genre
+field_name: field_genre
+entity_type: profile
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

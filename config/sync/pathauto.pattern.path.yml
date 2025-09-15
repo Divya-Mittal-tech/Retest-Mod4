@@ -1,0 +1,22 @@
+uuid: 48e6dce4-b188-4bd7-b4bc-920ab39b622a
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: path
+label: path
+type: 'canonical_entities:node'
+pattern: '/editor/[node:nid]'
+selection_criteria:
+  872312ff-07e2-4c77-98c0-d84c82d0197a:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 872312ff-07e2-4c77-98c0-d84c82d0197a
+    context_mapping:
+      node: node
+    bundles:
+      editor: editor
+selection_logic: and
+weight: -5
+relationships: {  }

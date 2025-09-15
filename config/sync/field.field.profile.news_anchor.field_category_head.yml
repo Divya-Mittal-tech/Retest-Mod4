@@ -1,0 +1,29 @@
+uuid: a6d45faf-daa5-44c5-a6c7-ce83f878d9ac
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_category_head
+    - profile.type.news_anchor
+    - taxonomy.vocabulary.category
+id: profile.news_anchor.field_category_head
+field_name: field_category_head
+entity_type: profile
+bundle: news_anchor
+label: 'Category Head'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      category: category
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

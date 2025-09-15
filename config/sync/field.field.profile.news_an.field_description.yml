@@ -1,0 +1,19 @@
+uuid: c4d69b83-95b3-4ffe-a353-c59128c42477
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_description
+    - profile.type.news_an
+id: profile.news_an.field_description
+field_name: field_description
+entity_type: profile
+bundle: news_an
+label: Description
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

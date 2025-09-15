@@ -1,0 +1,21 @@
+uuid: 23b34722-e146-42d9-82b4-ab1dab7aa7a4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_joining_date
+    - profile.type.news_anchor
+  module:
+    - datetime
+id: profile.news_anchor.field_joining_date
+field_name: field_joining_date
+entity_type: profile
+bundle: news_anchor
+label: 'Joining Date'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

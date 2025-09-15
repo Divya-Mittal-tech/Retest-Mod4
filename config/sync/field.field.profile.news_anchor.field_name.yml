@@ -1,0 +1,19 @@
+uuid: bc173ce8-ac4e-43ca-b34d-29a611383485
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_name
+    - profile.type.news_anchor
+id: profile.news_anchor.field_name
+field_name: field_name
+entity_type: profile
+bundle: news_anchor
+label: Name
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,53 @@
+uuid: 75625e36-17d1-49cd-9fad-567b24aa9b64
+langcode: en
+status: true
+dependencies: {  }
+id: send_email_to_editor
+label: 'Send Email to Editor'
+events:
+  -
+    event_name: 'rules_entity_insert:node--news'
+  -
+    event_name: 'rules_entity_update:node--news'
+description: ''
+tags: {  }
+config_version: '3'
+expression:
+  id: rules_rule
+  uuid: 8dd58e6c-d54b-4544-971f-a50fdd5ccbd0
+  weight: 0
+  conditions:
+    id: rules_and
+    uuid: 6f9aad1b-1327-421b-ba36-71a644bcc607
+    weight: 0
+    conditions: {  }
+  actions:
+    id: rules_action_set
+    uuid: a63084e4-ec9b-48fb-b133-0416a9923381
+    weight: 0
+    actions:
+      -
+        id: rules_action
+        uuid: 70f6efa1-538e-4b5c-a8e5-a0070c80bb67
+        weight: 0
+        action_id: rules_send_email
+        context_values:
+          to:
+            - divyamittal979@gmail.com
+          subject: 'Editor Page is created and updated'
+          message: 'Hello [node:field_created_by:field_editor_in_charge:name],  A news item "[node:title]" has been created/updated.'
+          reply: ''
+          language: ''
+        context_mapping: {  }
+        context_processors:
+          to:
+            rules_tokens: {  }
+          subject:
+            rules_tokens: {  }
+          message:
+            rules_tokens: {  }
+          reply:
+            rules_tokens: {  }
+          language:
+            rules_tokens: {  }
+        provides_mapping: {  }

@@ -1,0 +1,19 @@
+uuid: e7cdf70f-4ccb-4708-8de5-418667aae679
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.user.compact
+  module:
+    - user
+_core:
+  default_config_hash: 00zr_RBdTjPjBGITD3h4c1ESQZimjdVCcHGt1trLqIY
+id: user.user.compact
+targetEntityType: user
+bundle: user
+mode: compact
+content: {  }
+hidden:
+  member_for: true
+  news_an_profiles: true
+  news_anchor_profiles: true
