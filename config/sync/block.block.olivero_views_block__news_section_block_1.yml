@@ -1,17 +1,18 @@
 uuid: 662a98b4-4917-4a0d-a1c9-c776f5261006
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - views.view.news_section
   module:
+    - node
     - views
   theme:
     - olivero
 id: olivero_views_block__news_section_block_1
 theme: olivero
 region: sidebar
-weight: 0
+weight: -8
 provider: null
 plugin: 'views_block:news_section-block_1'
 settings:
@@ -22,4 +23,11 @@ settings:
   context_mapping: {  }
   views_label: ''
   items_per_page: none
-visibility: {  }
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      news_anchor: news_anchor

@@ -1,0 +1,21 @@
+uuid: 8404c76c-92cc-4848-aff6-d586da1037e5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.leader.field_leader_name
+    - paragraphs.paragraphs_type.leader
+id: paragraph.leader.default
+targetEntityType: paragraph
+bundle: leader
+mode: default
+content:
+  field_leader_name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

@@ -1,0 +1,22 @@
+uuid: 52f25102-8fc5-4eb4-9bd5-30b3c05274b4
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: aboutpath
+label: path
+type: 'canonical_entities:node'
+pattern: '/about-us/[node:nid]'
+selection_criteria:
+  5b4ec2f6-e1b4-4756-b296-cc07bd81d85e:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 5b4ec2f6-e1b4-4756-b296-cc07bd81d85e
+    context_mapping:
+      node: node
+    bundles:
+      about_us: about_us
+selection_logic: and
+weight: -5
+relationships: {  }

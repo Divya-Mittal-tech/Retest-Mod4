@@ -1,0 +1,55 @@
+uuid: 23f984b9-2576-43ba-bbb4-4e12b8d13b01
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.leaders.field_designation
+    - field.field.node.leaders.field_linkedin_link
+    - field.field.node.leaders.field_profile_image
+    - node.type.leaders
+  module:
+    - image
+    - link
+    - user
+id: node.leaders.default
+targetEntityType: node
+bundle: leaders
+mode: default
+content:
+  field_designation:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_linkedin_link:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_profile_image:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

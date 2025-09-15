@@ -1,0 +1,29 @@
+uuid: 519e6ccb-08ee-41d5-bf69-1a7d6e8b4f93
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_anchor
+    - node.type.about_us
+    - node.type.news_anchor
+id: node.about_us.field_anchor
+field_name: field_anchor
+entity_type: node
+bundle: about_us
+label: Anchor
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      news_anchor: news_anchor
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,26 @@
+uuid: 1d2f1cee-8f17-47d0-87e9-44b8f5e46f45
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.leaders.field_designation
+    - field.field.node.leaders.field_linkedin_link
+    - field.field.node.leaders.field_profile_image
+    - node.type.leaders
+  module:
+    - user
+id: node.leaders.teaser
+targetEntityType: node
+bundle: leaders
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_designation: true
+  field_linkedin_link: true
+  field_profile_image: true
