@@ -1,0 +1,20 @@
+uuid: ac990636-a0d2-4b00-9a8c-bdc4a8c7a7bf
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - user
+id: node.field_editor_in_charge
+field_name: field_editor_in_charge
+entity_type: node
+type: entity_reference
+settings:
+  target_type: user
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

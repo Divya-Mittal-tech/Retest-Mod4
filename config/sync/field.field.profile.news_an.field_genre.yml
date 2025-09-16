@@ -1,0 +1,29 @@
+uuid: 406fa703-36dd-4cb1-92d7-b1766b89aa66
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_genre
+    - profile.type.news_an
+    - taxonomy.vocabulary.genre
+id: profile.news_an.field_genre
+field_name: field_genre
+entity_type: profile
+bundle: news_an
+label: Genre
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      genre: genre
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

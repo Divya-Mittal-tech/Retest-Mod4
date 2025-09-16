@@ -1,0 +1,38 @@
+uuid: da275c97-bfb5-409e-b0a2-28a8d41ebea7
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.news_anchor.body
+    - field.field.node.news_anchor.field_editor_in_charge
+    - field.field.node.news_anchor.field_genre
+    - field.field.node.news_anchor.field_joining_date
+    - field.field.node.news_anchor.field_name
+    - node.type.news_anchor
+  module:
+    - text
+    - user
+id: node.news_anchor.teaser
+targetEntityType: node
+bundle: news_anchor
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_editor_in_charge: true
+  field_genre: true
+  field_joining_date: true
+  field_name: true

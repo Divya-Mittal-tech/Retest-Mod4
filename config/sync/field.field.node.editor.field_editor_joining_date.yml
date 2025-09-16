@@ -1,0 +1,21 @@
+uuid: fcfebfbb-e9b8-4185-88d3-88712b3d5957
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_editor_joining_date
+    - node.type.editor
+  module:
+    - datetime
+id: node.editor.field_editor_joining_date
+field_name: field_editor_joining_date
+entity_type: node
+bundle: editor
+label: 'Joining Date'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

@@ -1,0 +1,19 @@
+uuid: 26598948-8274-4bd7-bb4b-e515b2c8efbf
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+_core:
+  default_config_hash: mZLyuWM9CQx2ZJVqFGSbzgFnHzudVbHBYmdU256A5Wk
+id: user.user.default
+targetEntityType: user
+bundle: user
+mode: default
+content:
+  member_for:
+    weight: 5
+    region: content
+hidden:
+  news_an_profiles: true
+  news_anchor_profiles: true

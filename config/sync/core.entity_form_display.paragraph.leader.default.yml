@@ -1,0 +1,23 @@
+uuid: 3aa291c5-f32b-4579-bb3e-f0997326ad86
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.leader.field_leader_name
+    - paragraphs.paragraphs_type.leader
+id: paragraph.leader.default
+targetEntityType: paragraph
+bundle: leader
+mode: default
+content:
+  field_leader_name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

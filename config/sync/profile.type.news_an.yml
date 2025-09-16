@@ -1,0 +1,13 @@
+uuid: add35f58-e0af-49bd-9cda-ead86df39203
+langcode: en
+status: true
+dependencies: {  }
+id: news_an
+label: 'News Anchor'
+display_label: ''
+multiple: false
+registration: false
+roles:
+  news_anchor: news_anchor
+allow_revisions: false
+new_revision: false

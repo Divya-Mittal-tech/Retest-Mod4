@@ -1,0 +1,38 @@
+uuid: a231aadf-8233-4275-abb4-3da1a8592b90
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.about_us.field_anchor
+    - field.field.node.about_us.field_multiple_leader
+    - node.type.about_us
+  module:
+    - user
+id: node.about_us.default
+targetEntityType: node
+bundle: about_us
+mode: default
+content:
+  field_anchor:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: teaser
+      link: false
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_multiple_leader:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

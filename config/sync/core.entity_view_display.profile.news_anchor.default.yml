@@ -1,0 +1,50 @@
+uuid: 097ae493-af1f-4765-bc78-12743795ac83
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.profile.news_anchor.field_category_head
+    - field.field.profile.news_anchor.field_description
+    - field.field.profile.news_anchor.field_joining_date
+    - field.field.profile.news_anchor.field_name
+    - profile.type.news_anchor
+  module:
+    - datetime
+id: profile.news_anchor.default
+targetEntityType: profile
+bundle: news_anchor
+mode: default
+content:
+  field_category_head:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_description:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_joining_date:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

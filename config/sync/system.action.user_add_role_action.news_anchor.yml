@@ -1,0 +1,14 @@
+uuid: 2d8e1a97-0381-4d65-8b22-eaa23b0f98b2
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.news_anchor
+  module:
+    - user
+id: user_add_role_action.news_anchor
+label: 'Add the News Anchor role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: news_anchor

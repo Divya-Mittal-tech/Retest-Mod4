@@ -1,0 +1,29 @@
+uuid: 43a77903-20a5-45ea-8f20-ab296daf72b2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_created_by
+    - node.type.news
+    - node.type.news_anchor
+id: node.news.field_created_by
+field_name: field_created_by
+entity_type: node
+bundle: news
+label: 'Created By'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      news_anchor: news_anchor
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

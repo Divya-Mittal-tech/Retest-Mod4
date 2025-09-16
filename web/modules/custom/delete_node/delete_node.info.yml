@@ -1,0 +1,5 @@
+name: 'delete_node'
+type: module
+description: 'this is a custom module.'
+package: Custom
+core_version_requirement: ^10 || ^11

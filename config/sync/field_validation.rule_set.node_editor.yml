@@ -1,0 +1,26 @@
+uuid: 0d947adb-0f94-41af-ac1f-246152c61c79
+langcode: en
+status: true
+dependencies: {  }
+name: node_editor
+label: 'node editor validation'
+entity_type: node
+bundle: editor
+field_validation_rules:
+  7ec509af-f1a0-475a-8f9a-054574137924:
+    id: unique_field_validation_rule
+    title: 'Category head '
+    data:
+      scope: entity
+      published: true
+      per_user: false
+    weight: 1
+    uuid: 7ec509af-f1a0-475a-8f9a-054574137924
+    field_name: field_category_head
+    column: target_id
+    error_message: 'This category’s head in charge is Mr. Editor ABC, either update his category or select any other category from the list.'
+    roles: {  }
+    condition:
+      field: ''
+      operator: ''
+      value: ''
